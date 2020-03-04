@@ -61,6 +61,7 @@ public class WebDrivers extends TestExecutor{
 		Thread.sleep(500);
 		wb.findElement(By.xpath("//*[@value='Run']")).click();
 		Thread.sleep(2000);
+                Thread.sleep(2000);
 		
 	}
 	
