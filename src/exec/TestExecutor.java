@@ -24,6 +24,7 @@ public class TestExecutor {
 	@Test
 	public void loginToPage() throws Exception {
 		generic.login(driver);
+		System.out.println("Login Succesfully");
 		//Assert.assertEquals("Fieldglass: System Admin", generic.getTitles());
 		//  return generic.getTitles();
 	}
