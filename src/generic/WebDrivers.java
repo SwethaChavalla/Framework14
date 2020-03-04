@@ -29,7 +29,7 @@ public class WebDrivers extends TestExecutor{
 	
 	public String getTitles() {
 		String title = driver.getTitle();
-		//syso
+		//syso--------
 		return title;
 	}
 	
