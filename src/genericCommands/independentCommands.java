@@ -11,7 +11,7 @@ import exec.TestExecutor;
 public class WebDrivers extends TestExecutor{
 	
 	public WebDriver intializeBrowser() throws Exception {
-		String strPath = System.getProperty("user.dir")+"//Drivers//chromedriver.exe";
+		String strPath = System.getProperty("user.dir")+"//Webdrivers//chromedriver.exe";
 		System.setProperty("webdriver.chrome.driver", strPath);
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
