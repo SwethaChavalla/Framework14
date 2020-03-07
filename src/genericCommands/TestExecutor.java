@@ -43,17 +43,4 @@ public class TestExecutor {
 		
 	}
 	
-	@Listeners
-	public void main2() throws Exception {
-		try {
-			System.out.println(" -----    I am in main method -------  ");
-			//generic.citiTaskReport(driver);
-			//generic.reportVerifing(driver,"","");
-		}catch(Exception e) {
-			System.out.println(e.getMessage());
-		}
-		
-		
-	}
-
 }
