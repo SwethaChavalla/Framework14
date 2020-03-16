@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="Excel_reading" >
+       
+    
+    <test name="Read Excel" >
+      <parameter name="path" value="src/main/java" />   
+        <parameter name="sheetName" value="Sheet1" />  
+        <classes>
+            <class name="genericCommands.excelReader" />
+        </classes>
+    </test>
+    
+</suite>
