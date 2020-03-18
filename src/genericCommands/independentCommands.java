@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-import exec.TestExecutor;
+import genericCommands.TestExecutor;
 
 public class IndependentCommands extends TestExecutor{
 	
