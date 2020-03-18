@@ -1,10 +1,10 @@
-package exec;
+package genericCommands;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import generic.WebDrivers;
+import genericCommands.WebDrivers;
 
 
 
