@@ -1,21 +1,21 @@
-package exec;
+package genericCommands;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import generic.WebDrivers;
+
 
 
 
 public class TestExecutor {
 	
 	public WebDriver driver = null;
-	public WebDrivers generic = null;
+	public IndependentCommands generic = null;
 	
 	@BeforeTest
 	public void initializeBrw() throws Exception {
-		generic = new WebDrivers();
+		generic = new IndependentCommands();
 		generic.intializeBrowser();
 		driver=generic.getDriver();
 		generic.navigateToUrl("https://sel5.fgvms.com/");

@@ -1,4 +1,4 @@
-package generic;
+package genericCommands;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -6,9 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-import exec.TestExecutor;
+import genericCommands.TestExecutor;
 
-public class WebDrivers extends TestExecutor{
+public class IndependentCommands extends TestExecutor{
 	
 	public WebDriver intializeBrowser() throws Exception {
 		String strPath = System.getProperty("user.dir")+"//Webdrivers//chromedriver.exe";
