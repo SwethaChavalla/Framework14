@@ -3,6 +3,7 @@ package genericCommands;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -16,13 +17,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
-
 public class excelReader {
+	private final static List<CsvData> results = new LinkedList<>();
 	@BeforeSuite()
-	public void getWB() {
+	public void getWBData() {
 		//System.out.println(getCellValue(3,0));
 		try {
-			FileInputStream file = new FileInputStream("C:/Practice/Framework14/TestDataFiles/excelReading.xls");
+			FileInputStream file = new FileInputStream("C:/Practice/Framework14/src/TestDataFiles/excelReading.xls");
 			Workbook workBook = WorkbookFactory.create(file);
 			Sheet sheet = workBook.getSheet("Sheet1");
 			//System.out.println(sheet.getLastRowNum());
@@ -81,9 +82,10 @@ public class excelReader {
 				}
 				fieldValueMap.put(columnHeaders.get(i), cellValue);
 			}
-			System.out.println(fieldValueMap);
-		}
+			//System.out.println(fieldValueMap);
 		
+		results.add(new CsvData(fileHeader,fieldValueMap));
+		}
 	}
 
 	private String getCellValueAsString(Cell cell) {
@@ -128,4 +130,8 @@ public class excelReader {
 		}
 		return cv;		
 	}
+	public static List<CsvData> loadResults()  {
+		return results;
+	}
+		
 }

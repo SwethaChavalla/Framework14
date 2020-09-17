@@ -1,7 +1,10 @@
 package genericCommands;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.*;
 
 
@@ -10,7 +13,12 @@ public class TestExecutor {
 	public WebDriver driver = null;
 	public IndependentCommands generic = null;
 	
-	@BeforeTest
+	@BeforeSuite()
+	public void excelData() {
+		new excelReader().getWBData();
+	}
+	
+	/*@BeforeTest
 	public void initializeBrw() throws Exception {
 		generic = new IndependentCommands();
 		generic.intializeBrowser();
@@ -35,6 +43,28 @@ public class TestExecutor {
 			System.out.println(e.getMessage());
 		}
 		
+		
+	}*/
+
+	@DataProvider(name = "dataProvider")
+	public Object[][] getData() throws Exception {
+		List<CsvData> records = excelReader.loadResults();
+		int i=0;
+		Object[][] data = new Object[records.size()][2];
+		for (CsvData record : records) {
+			if (record.getValues().get("Skip")!=null) {
+				data[i][0] = record;
+				i++;
+			}	
+			}
+		//System.out.println(data);
+		return data;
+	}
+
+	@Test(dataProvider = "dataProvider")
+	public void test(ITestContext itc, CsvData data) {
+		
+		System.out.println("Test Method Data:"+data.getValues());
 		
 	}
 }
