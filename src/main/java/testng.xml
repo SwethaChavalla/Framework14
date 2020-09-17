@@ -2,12 +2,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="FMWK14_Runner" >
   
-  <!-- <parameter name="serverUrl" value="https://sel5.fgvms.com"/>
-  <parameter name="browserName" value="CR"/> -->
+  <parameter name="serverUrl" value="https://sel5.fgvms.com"/>
+  <parameter name="browserName" value="CR"/>
+  <parameter name="properties" value="fmwk/PropertyFile/TestProp.properties"/>
+  <parameter name="datafile" value="Datafile1.xls"/>
   	
  	<test name="Run Main Method">
-		<classes>
-			<class name="genericCommands.TestExecutor" />
-		</classes>
+ 		<parameter name="sheetname" value="UsersLogin"/>
+			<classes>
+				<class name="genericCommands.TestExecutor" />
+			</classes>
 	</test>  
 </suite> 

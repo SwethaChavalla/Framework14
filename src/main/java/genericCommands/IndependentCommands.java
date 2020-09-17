@@ -8,8 +8,9 @@ import org.testng.Assert;
 
 import genericCommands.TestExecutor;
 
-public class IndependentCommands extends TestExecutor{
+ class IndependentCommands extends TestExecutor{
 	
+	String user="username";
 	public WebDriver intializeBrowser() throws Exception {
 		String strPath = System.getProperty("user.dir")+"//Webdrivers//chromedriver.exe";
 		System.setProperty("webdriver.chrome.driver", strPath);
@@ -43,7 +44,7 @@ public class IndependentCommands extends TestExecutor{
 	}
 	
 	public void login(WebDriver wb) throws Exception {
-		wb.findElement(By.name("username")).sendKeys("selenium_hd");
+		wb.findElement(By.name(generic.user)).sendKeys("selenium_hd");
 		wb.findElement(By.name("password")).sendKeys("fg");
 		wb.findElement(By.xpath("//*[@value='Sign In']")).click();
 		Thread.sleep(2000);
